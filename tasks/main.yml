@@ -1,2 +1,8 @@
 ---
-# tasks file for ansible-role-tmux
+- name: install tmux
+  yum: name=tmux state=latest
+
+- name: configure tmux
+  template:
+    src: config.tmux.j2
+    dest: /etc/config.tmux
